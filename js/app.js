@@ -1,4 +1,3 @@
-console.log('Welcome to route app. this is app.js');
 showNotes();
 
 let addBtn = document.getElementById('addBtn');
@@ -16,7 +15,6 @@ addBtn.addEventListener("click", function () {
     notesObj.push(addTxt.value);
     localStorage.setItem("notes", JSON.stringify(notesObj));
     addTxt.value = "";
-    // console.log(notesObj);
     showNotes();
 })
 
@@ -53,7 +51,6 @@ function showNotes() {
 
 //function to delete a note
 function deleteNote(index) {
-    // console.log('i am deleting', index);
     let notes = localStorage.getItem('notes');
 
     if (notes == null) {
@@ -72,7 +69,6 @@ let searchTxt = document.getElementById('searchTxt');
 searchTxt.addEventListener("input", function () {
 
     let inputVal = searchTxt.value.toLowerCase();
-    // console.log('input event fired!', inputVal);
 
     let noteCard = document.getElementsByClassName('noteCard');
     Array.from(noteCard).forEach(function (element) {
@@ -84,6 +80,5 @@ searchTxt.addEventListener("input", function () {
         } else {
             element.style.display = "none";
         }
-        //console.log(cardTxt);
     })
 })
